@@ -1,0 +1,42 @@
+<script src="../assets/js/user.js" charset="utf-8"></script>
+<div class="col-md-3" id="sidepanel">
+    <div class="row picture">
+        <div class="col-md-5">
+            <img src="../assets/images/userProfile/<%= user_id %>.jpg" alt="profile picture" class="img-thumbnail">
+        </div>
+        <div class="col-md-7">
+            <a class="picturetitle" href="/student-profile"><%= name %></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 mt-4">
+            <ul class="list-group">
+                <a id="studymates" href="/study-mates" class="list-group-item list-group-item-action">Study Mates</a>
+                <a id="studyrequests" href="/study-requests" class="list-group-item list-group-item-action">Study Requests</a>
+            </ul>
+        </div>
+
+        <div class="col-md-12 mt-4">
+            <ul class="list-group">
+                <a id="basicinfo" href="/basic-info" class="list-group-item list-group-item-action">Basic
+                    Information</a>
+                <a id="academicinfo" href="/academic-info" class="list-group-item list-group-item-action">Academic
+                    Information</a>
+                <a id="studycriteria" href="/study-criteria" class="list-group-item list-group-item-action">Study
+                    Preference</a>
+            </ul>
+        </div>
+
+        <div class="col-md-12 mt-4">
+            <div class="list-group">
+                <a id="accsettings" href="/account-settings" class="list-group-item list-group-item-action">Account
+                    Settings</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var subclass = "<%= subClass %>";
+    $("#" + subclass).addClass(" active");
+</script>

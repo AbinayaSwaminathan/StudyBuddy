@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StudyMate | Find A Study Partner</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/mdb.css">
+    <%- include('usercommonCSSJS') -%>
+    <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <%- include('userheader') -%>
+            <section class="mt-55" id="studentprofile">
+                <!-- <div class="container-fluid"> -->
+                <hr class="featurette-divider">
+                <div class="row featurette">
+                    <%- include('profilesidepanel') -%>
+                        <div class="col-md-9" id="mainpanel">
+                            <div class="card shadow-2-strong editstudycriteria" style="border-radius: 1rem;">
+                                <div class="card-body p-5 text-center">
+
+                                    <h2 class="featurette-heading">Hello <span class="text-muted">
+                                            <%= name %>
+                                        </span>,</h2>
+
+                                    <div class="row mt-5">
+                                        <div class="col-md-6">
+                                            <div class="col-md-8 form-outline mb-4 text-start">
+                                                <label class="form-check-label">Please select your preferences: </label>
+                                            </div>
+
+                                            <div class="col-md-8 form-outline mb-4 text-start">
+                                                <label class="form-check-label">Gender: </label>
+                                                <select class="mdb-select dropdown-primary md-form" id="gender" multiple>
+                                                    <% if(Object.keys(genderarr).length> 0) {
+                                                        Object.entries(genderarr).forEach(([key, value]) => {
+                                                        %>
+                                                        <option value="<%=value%>" <% if(pref_gender.indexOf(value) >= 0) {
+                                                            %> selected <% } %>><%=value%></option>
+                                                        <% }); } %>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-8 form-outline mb-4 text-start">
+                                                <label class="form-check-label">Timezone: </label>
+                                                <select class="mdb-select dropdown-primary md-form" id="timezone" multiple>
+                                                    <% if(Object.keys(timezone).length> 0) {
+                                                        Object.entries(timezone).forEach(([key, value]) => {
+                                                        %>
+                                                        <option value="<%=value.abbr%>" <% if(pref_timezone.indexOf(value.abbr) >= 0) {
+                                                            %> selected <% } %>><%=value.abbr%> <%=value.timezone%> (<%=value.offset%>)</option>
+                                                        <% }); } %>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-8 form-outline mb-4 text-start">
+                                                <label class="form-check-label">Study Mode: </label>
+                                                <select class="mdb-select dropdown-primary md-form" id="studymode" multiple>
+                                                    <% if(Object.keys(studymode).length> 0) {
+                                                        Object.entries(studymode).forEach(([key, value]) => {
+                                                        %>
+                                                        <option value="<%=value%>" <% if(pref_studymode.indexOf(value) >= 0) {
+                                                            %> selected <% } %>><%=value%></option>
+                                                        <% }); } %>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-8 form-outline mb-4 text-start">
+                                                <label class="form-check-label">Exam: </label>
+                                                <select class="mdb-select dropdown-primary md-form" id="exam" >
+                                                    <% if(exam_taking != '') { %>
+                                                        <option value="<%=exam_taking%>" <% if(pref_exam == exam_taking) {
+                                                            %> selected <% } %>><%=exam_taking%></option>
+                                                        <% } %>
+                                                    <option value="Any" <% if(pref_exam == "Any") {
+                                                        %> selected <% } %>>Any</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-8 form-outline mb-4 text-start">
+                                                <label class="form-check-label">University: </label>
+                                                <select class="mdb-select dropdown-primary md-form" id="university" >
+                                                    <% if(university != '') { %>
+                                                        <option value="<%=university%>" <% if(pref_university == university) {
+                                                            %> selected <% } %>><%=university%></option>
+                                                        <% } %>
+                                                    <option value="Any" <% if(pref_university == "Any") {
+                                                        %> selected <% } %>>Any</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-8 form-outline mb-4 text-start">
+                                                <label class="form-check-label">Program: </label>
+                                                <select class="mdb-select dropdown-primary md-form" id="program" >
+                                                    <% if(program != '') { %>
+                                                        <option value="<%=program%>" <% if(pref_program == program) {
+                                                            %> selected <% } %>><%=program%></option>
+                                                        <% } %>
+                                                    <option value="Any" <% if(pref_program == "Any") {
+                                                        %> selected <% } %>>Any</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="col-md-8 form-outline text-start">
+                                                <label class="form-check-label">Let us know more about you: </label>
+                                            </div>
+                                            <div class="col-md-8 form-outline mb-4 subheading">
+                                                <label class="form-check-label">(1 - Rarely, 5 - Often)</label>
+                                            </div>
+
+                                            <div class="col-md-8 form-outline mb-4 text-start">
+                                                <div class=" form-outline text-start mb-3">
+                                                    <label class="form-check-label">I study with a classmate or group: </label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question1"
+                                                        id="question11" value="1" <% if(question1 == 1) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question11">1</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question1"
+                                                        id="question12" value="2" <% if(question1 == 2) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question12">2</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question1"
+                                                        id="question13" value="3" <% if(question1 == 3) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question13">3</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question1"
+                                                        id="question14" value="4" <% if(question1 == 4) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question14">4</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question1"
+                                                        id="question15" value="5" <% if(question1 == 5) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question15">5</label>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-8 form-outline mb-4 text-start">
+                                                <div class=" form-outline text-start mb-3">
+                                                    <label class="form-check-label">I set study goals and use planner: </label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question2"
+                                                        id="question21" value="1" <% if(question2 == 1) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question21">1</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question2"
+                                                        id="question22" value="2" <% if(question2 == 2) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question22">2</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question2"
+                                                        id="question23" value="3" <% if(question2 == 3) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question23">3</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question2"
+                                                        id="question24" value="4" <% if(question2 == 4) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question24">4</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question2"
+                                                        id="question25" value="5" <% if(question2 == 5) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question25">5</label>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-8 form-outline mb-4 text-start">
+                                                <div class=" form-outline text-start mb-3">
+                                                    <label class="form-check-label">I study for a length of time then take a short break before returning to studying:</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question3"
+                                                        id="question31" value="1" <% if(question3 == 1) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question31">1</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question3"
+                                                        id="question32" value="2" <% if(question3 == 2) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question32">2</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question3"
+                                                        id="question33" value="3" <% if(question3 == 3) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question33">3</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question3"
+                                                        id="question34" value="4" <% if(question3 == 4) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question34">4</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question3"
+                                                        id="question35" value="5" <% if(question3 == 5) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question35">5</label>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-8 form-outline mb-4 text-start">
+                                                <div class=" form-outline text-start mb-3">
+                                                    <label class="form-check-label">I take quizes, challenges to practice over material: </label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question4"
+                                                        id="question41" value="1" <% if(question4 == 1) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question41">1</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question4"
+                                                        id="question42" value="2" <% if(question4 == 2) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question42">2</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question4"
+                                                        id="question43" value="3" <% if(question4 == 3) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question43">3</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question4"
+                                                        id="question44" value="4" <% if(question4 == 4) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question44">4</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="question4"
+                                                        id="question45" value="5" <% if(question4 == 5) { %> checked <% } %>>
+                                                    <label class="form-check-label" for="question45">5</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <span class="successMsg"></span>
+                                        <span class="errorMsg"></span>
+                                    </div>
+
+                                    <button class="btn btn-danger btn-sm btn-block" type="submit"
+                                        id="studypreferencesupdate">Save
+                                        Changes</button>
+                                </div>
+                            </div>
+                        </div>
+            </section>
+    </div>
+    <%- include('userfooter') -%>
+</body>
+<script>
+    $(document).ready(function () {
+        $('.mdb-select').formSelect();
+    });
+</script>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StudyMate | Find A Study Partner</title>
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/images/favicon.ico">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%- include('usercommonCSSJS') -%>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <%- include('userheader') -%>
+            <section class="mt-55" id="studentprofile">
+                <!-- <div class="container-fluid"> -->
+                <hr class="featurette-divider">
+                <div class="row featurette">
+                    <%- include('profilesidepanel') -%>
+                        <div class="col-md-9" id="mainpanel">
+                            <div class="card shadow-2-strong editbasicinfo" style="border-radius: 1rem;">
+                                <div class="card-body p-5 text-center">
+                                    <h2 class="featurette-heading">Student profile</h2>
+                                    <% if(status=="failure" ) { %>
+                                        <div class="form-outline mb-4">
+                                            <span class="errorMsg">
+                                                <%= message %>
+                                            </span>
+                                        </div>
+                                        <% } else { %>
+                                            <div class="row">
+                                                <% if(Object.keys(studentInfo).length> 0) {
+                                                    Object.entries(studentInfo).forEach(([key, value]) => {
+                                                    %>
+
+                                                    <div class="col-md-3">
+                                                        <div class="col-md-12 form-outline mb-4">
+                                                            <img src="../assets/images/userProfile/<%= value.ru_id %>.jpg"
+                                                                class="img-thumbnail" alt="profile picture">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-1" style="border-left: 1px dotted #919da9;">
+                                                    </div>
+
+                                                    <div class="col-md-4 text-start">
+                                                        <h5>Basic Info:</h5>
+                                                        <div class="form-outline mb-2">
+                                                            <label class="fontStyling">Name: </label>
+                                                            <label class="fontStyling">
+                                                                <%= value.name %>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-outline mb-2">
+                                                            <label class="fontStyling">Gender: </label>
+                                                            <label class="fontStyling">
+                                                                <%= value.gender %>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-outline mb-4">
+                                                            <label class="fontStyling">Zipcode: </label>
+                                                            <label class="fontStyling">
+                                                                <%= value.zipcode %>
+                                                            </label>
+                                                        </div>
+
+                                                        <h5>Academic Info:</h5>
+
+                                                        <div class="form-outline mb-2">
+                                                            <label class="fontStyling">Exam: </label>
+                                                            <label class="fontStyling">
+                                                                <%= value.exam_taking %>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-outline mb-2">
+                                                            <label class="fontStyling">University: </label>
+                                                            <label class="fontStyling">
+                                                                <%= value.university %>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-outline mb-2">
+                                                            <label class="fontStyling">Degree: </label>
+                                                            <label class="fontStyling">
+                                                                <%= value.degree %>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-outline mb-2">
+                                                            <label class="fontStyling">Program: </label>
+                                                            <label class="fontStyling">
+                                                                <%= value.program %>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-outline mb-2">
+                                                            <label class="fontStyling">Graduating Year: </label>
+                                                            <label class="fontStyling">
+                                                                <%= value.graduating_year %>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-outline mb-4">
+                                                            <label class="fontStyling">GPA: </label>
+                                                            <label class="fontStyling">
+                                                                <%= value.gpa %>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-1" style="border-left: 1px dotted #919da9;">
+                                                    </div>
+
+                                                    <div class="col-md-3 text-start">
+                                                        <h5>Study Preferences:</h5>
+                                                        <div class="form-outline mb-2">
+                                                            <label class="fontStyling">Gender: </label>
+                                                            <label class="fontStyling">
+                                                                <%= value.pref_gender %>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-outline mb-2">
+                                                            <label class="fontStyling">Timezone: </label>
+                                                            <label class="fontStyling">
+                                                                <%= value.pref_timezone %>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-outline mb-2">
+                                                            <label class="fontStyling">Studymode: </label>
+                                                            <label class="fontStyling">
+                                                                <%= value.pref_studymode %>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-outline mb-2">
+                                                            <label class="fontStyling">Exam: </label>
+                                                            <label class="fontStyling">
+                                                                <%= value.pref_exam %>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-outline mb-2">
+                                                            <label class="fontStyling">University: </label>
+                                                            <label class="fontStyling">
+                                                                <%= value.pref_university %>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-outline mb-2">
+                                                            <label class="fontStyling">Program: </label>
+                                                            <label class="fontStyling">
+                                                                <%= value.pref_program %>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-outline mb-4">
+                                                            <label class="fontStyling">Rating: </label>
+                                                            <label class="fontStyling">
+                                                                <%= value.avgrating %>/5
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <% }); } else { %>
+                                                        <div class="col-md-12 text-center mb-5">
+                                                            <span class="errorMsgResult">No Information available</span>
+                                                        </div>
+                                                        <% } %>
+                                            </div>
+                                            <% } %>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </section>
+    </div>
+    <%- include('userfooter') -%>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<script src="assets/js/filter.js" charset="utf-8"></script>
+<div class="col-md-3" id="sidepanel">
+    <div class="row picture">
+        <div class="col-md-5">
+            <img src="../assets/images/userProfile/<%= user_id %>.jpg" alt="profile picture" class="img-thumbnail">
+        </div>
+        <div class="col-md-7">
+            <a class="picturetitle" href="/student-profile">
+                <%= name %>
+            </a>
+        </div>
+    </div>
+
+    <div class="row" id="filterPanel">
+        <div class="col-md-12 mt-4">
+            <ul class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active">Filters</a>
+            </ul>
+        </div>
+        <div class="col-md-12 mt-4">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <button class="btn btn-toggle align-items-center rounded filterMainClass" type="button"
+                        data-toggle="collapse" data-target="#genderFilter" aria-expanded="false"
+                        aria-controls="genderFilter">
+                        Gender
+                        <span class="cornerarrow"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                    </button>
+                    <div class="collapse mt-2" id="genderFilter">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="genderFilter" class="customCheck1" value="Male">
+                            <label class="custom-control-label" for="custom-checkbox">Male</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="genderFilter" class="customCheck1" value="Female">
+                            <label class="custom-control-label" for="custom-checkbox">Female</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="genderFilter" class="customCheck1" value="Other">
+                            <label class="custom-control-label" for="custom-checkbox">Other</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="genderFilter" class="customCheck1" value="Other">
+                            <label class="custom-control-label" for="custom-checkbox">Any</label>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <button class="btn btn-toggle align-items-center rounded filterMainClass" type="button"
+                        data-toggle="collapse" data-target="#studyModeFilter" aria-expanded="false"
+                        aria-controls="studyModeFilter">
+                        Study Mode
+                        <span class="cornerarrow"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                    </button>
+                    <div class="collapse mt-2" id="studyModeFilter">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="studyModeFilter" class="customCheck1" value="Other">
+                            <label class="custom-control-label" for="custom-checkbox">Online</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="studyModeFilter" class="customCheck1" value="Other">
+                            <label class="custom-control-label" for="custom-checkbox">Offline</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="studyModeFilter" class="customCheck1" value="Other">
+                            <label class="custom-control-label" for="custom-checkbox">Hybrid</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="studyModeFilter" class="customCheck1" value="Other">
+                            <label class="custom-control-label" for="custom-checkbox">Any</label>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <button class="btn btn-toggle align-items-center rounded filterMainClass" type="button"
+                        data-toggle="collapse" data-target="#timezoneFilter" aria-expanded="false"
+                        aria-controls="timezoneFilter">
+                        Timezone
+                        <span class="cornerarrow"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                    </button>
+                    <div class="collapse mt-2 scrollablefilterdiv" id="timezoneFilter">
+                        <% if(Object.keys(timezone).length> 0) {
+                            Object.entries(timezone).forEach(([key, value]) => {
+                            %>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="timezoneFilter" class="customCheck1" value="<%=value.abbr%>">
+                            <label class="custom-control-label" for="custom-checkbox"><%=value.timezone%> (<%=value.offset%>)</label>
+                        </div>
+                        <% }); } %>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <button class="btn btn-toggle align-items-center rounded filterMainClass" type="button"
+                        data-toggle="collapse" data-target="#examFilter" aria-expanded="false"
+                        aria-controls="examFilter">
+                        Exam
+                        <span class="cornerarrow"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                    </button>
+                    <div class="collapse mt-2 scrollablefilterdiv" id="examFilter">
+                        <% if(Object.keys(exam).length> 0) {
+                            Object.entries(exam).forEach(([key, value]) => {
+                            %>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="examFilter" class="customCheck1" value="<%=value.abbr%>">
+                            <label class="custom-control-label" for="custom-checkbox"><%=value.exam%> (<%=value.abbr%>)</label>
+                        </div>
+                        <% }); } %>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <button class="btn btn-toggle align-items-center rounded filterMainClass" type="button"
+                        data-toggle="collapse" data-target="#universityFilter" aria-expanded="false"
+                        aria-controls="universityFilter">
+                        University
+                        <span class="cornerarrow"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                    </button>
+                    <div class="collapse mt-2 scrollablefilterdiv" id="universityFilter">
+                        <% if(Object.keys(universities).length> 0) {
+                            Object.entries(universities).forEach(([key, value]) => {
+                            %>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="universityFilter" class="customCheck1" value="<%=value.university%>">
+                            <label class="custom-control-label" for="custom-checkbox"><%=value.university%></label>
+                        </div>
+                        <% }); } %>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <button class="btn btn-toggle align-items-center rounded filterMainClass" type="button"
+                        data-toggle="collapse" data-target="#programFilter" aria-expanded="false"
+                        aria-controls="programFilter">
+                        Program 
+                        <span class="cornerarrow"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                    </button>
+                    <div class="collapse mt-2 scrollablefilterdiv" id="programFilter">
+                        <% if(Object.keys(programs).length> 0) {
+                            Object.entries(programs).forEach(([key, value]) => {
+                            %>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="programFilter" class="customCheck1" value="<%=value.program%>">
+                            <label class="custom-control-label" for="custom-checkbox"><%=value.program%></label>
+                        </div>
+                        <% }); } %>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-12 mt-4">
+            <button class="btn btn-danger btn-sm btn-block" id="searchStudyPartners">Search</button>
+            <div class="form-outline mt-4">
+                <span class="successMsg"></span>
+                <span class="errorMsg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+</script>

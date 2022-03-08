@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StudyMate | Find A Study Partner</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%- include('commonCSSJS') -%>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <%- include('header') -%>
+            <section class="vh-100" id="contactus">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                            <div class="card-body p-5 text-center">
+
+                                <h3 class="mb-4">Contact Us</h3>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-check-label">Please let us know your feedback/query</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="name" class="form-control form-control-sm"
+                                        placeholder="(Required) Enter Name..." maxlength="50" />
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="email" id="useremail" class="form-control form-control-sm" maxlength="100"
+                                        placeholder="(Required) Enter Username/ Email Id..." />
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="number" id="contact" class="form-control form-control-sm"
+                                        placeholder="(Required) Enter Contact No: xxxxxxxxxx" />
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <textarea id="query" class="form-control form-control-sm"
+                                        placeholder="(Required) Enter Your Query..."></textarea>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <span class="successMsg"></span>
+                                    <span class="errorMsg"></span>
+                                </div>  
+
+                                <button class="btn btn-primary btn-sm btn-block" id="sendQuery">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </div>
+    <%- include('footer') -%>
+</body>
+
+</html>

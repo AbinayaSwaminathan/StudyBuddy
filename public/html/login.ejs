@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>StudyMate | Find A Study Partner</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%- include('commonCSSJS') -%>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <%- include('header') -%>
+            <section class="vh-100" id="logincredentials">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                            <div class="card-body p-5 text-center">
+
+                                <h3 class="mb-5">Log in</h3>
+
+                                <div class="form-outline mb-4">
+                                    <input type="email" id="useremail" class="form-control form-control-md"
+                                        placeholder="Enter Email Id..." value="" maxlength="100" />
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="userPassword" class="form-control form-control-md"
+                                        placeholder="Enter Password..." value="" />
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <span class="errorMsg"></span>
+                                </div>
+
+                                <button class="btn btn-primary btn-md btn-block" id="userlogin">Log In</button>
+                                <button class="btn btn-primary btn-md btn-block" input type="submit">Forgot Password</button>
+                                <hr class="my-4">
+                                <div class="g-signin2 mb-4" data-onsuccess="onSignIn"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </div>
+    <%- include('footer') -%>
+</body>
+</html>

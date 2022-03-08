@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StudyMate | Find A Study Partner</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%- include('usercommonCSSJS') -%>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <%- include('userheader') -%>
+            <section class="mt-55" id="studentprofile">
+                <!-- <div class="container-fluid"> -->
+                <hr class="featurette-divider">
+                <div class="row featurette">
+                    <%- include('profilesidepanel') -%>
+                        <div class="col-md-9" id="mainpanel">
+                            <div class="row requests">
+                                <h2 class="featurette-heading"><span class="text-muted">Study Requests</span></h2>
+                                <div class="row" id="requestSent">
+                                    <div class="col-md-12">
+                                        <span class="fontStyling">Requests Sent</span>
+                                    </div>
+                                    <% if(Object.keys(requestSent).length> 0) {
+                                        Object.entries(requestSent).forEach(([key, value]) => {
+                                        %>
+                                        <div class="col-md-3 profiletile" user-id="<%= value.ru_id %>">
+                                            <div class=" profileimage">
+                                                <a target="_blank" href="view-student-profile/<%= value.ru_id %>">
+                                                    <img src="../assets/images/userProfile/<%= value.ru_id%>.jpg"
+                                                    alt="profile picture" class="img-fluid">
+                                                </a>
+                                            </div>
+                                            <div class=" profiletitle">
+                                                <a target="_blank" href="view-student-profile/<%= value.ru_id %>">
+                                                    <%= value.name.toUpperCase() %>
+                                                </a>
+                                            </div>
+                                            <div class=" requeststatus">
+                                                <button class="btn btn-danger btn-sm btn-block cancelrequets" data-toggle="modal"
+                                                data-target="#cancelReqModal"
+                                                    requestid="<%=value.id%>">CANCEL REQUEST</button>
+                                            </div>
+                                        </div>
+                                        <% }); } else { %>
+                                            <div class="col-md-12 text-center mb-5">
+                                                <span class="errorMsgResult">No pending requests</span>
+                                            </div>
+                                            <% } %>
+                                </div>
+                                <div class="row" id="requestReceived">
+                                    <div class="col-md-12">
+                                        <span class="fontStyling">Requests Received</span>
+                                    </div>
+                                    <% if(Object.keys(requestReceived).length> 0) {
+                                        Object.entries(requestReceived).forEach(([key, value]) => {
+                                        %>
+                                        <div class="col-md-3 profiletile" user-id="<%= value.ru_id %>">
+                                            <div class=" profileimage">
+                                                <a target="_blank" href="view-student-profile/<%= value.ru_id %>">
+                                                    <img src="../assets/images/userProfile/<%= value.ru_id %>.jpg"
+                                                    class="img-thumbnail" alt="profile pictures">
+                                                </a>
+                                            </div>
+                                            <div class=" profiletitle">
+                                                <a target="_blank" href="view-student-profile/<%= value.ru_id %>">
+                                                    <%= value.name.toUpperCase() %>
+                                                </a>
+                                            </div>
+                                            <div class=" requeststatus">
+                                                <button class="btn btn-success btn-sm btn-block acceptRequest" data-toggle="modal"
+                                                data-target="#acceptReqModal" 
+                                                user="<%=value.ru_id%>" requestid="<%=value.id%>">ACCEPT</button>&nbsp;
+                                                <button class="btn btn-danger btn-sm btn-block rejectrequets" data-toggle="modal"
+                                                data-target="#rejectReqModal" requestid="<%=value.id%>">REJECT</button>
+                                            </div>
+                                        </div>
+                                        <% }); } else { %>
+                                            <div class="col-md-12 text-center mb-5">
+                                                <span class="errorMsgResult">No pending requests</span>
+                                            </div>
+                                            <% } %>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </section>
+    </div>
+    <%- include('userfooter') -%>
+</body>
+<div class="modal fade" id="cancelReqModal" tabindex="-1" role="dialog" aria-labelledby="cancelReqModal"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cancel Request</h5>
+                <button type="button" class="btn btn-light close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <label class="fontStyling">Are you sure you want to cancel this request? </label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-danger" id="confirmCancelReq" requesttype="1" requestid="">Cancel Request</button>
+
+                <div class="col-md-12 form-outline mb-4 text-center">
+                    <span class="successMsg"></span>
+                    <span class="errorMsg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="acceptReqModal" tabindex="-1" role="dialog" aria-labelledby="acceptReqModal"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Accept Request</h5>
+                <button type="button" class="btn btn-light close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <label class="fontStyling">Are you sure you want to accept this request? </label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-danger" id="confirmAcceptReq" requesttype="2" requestid="">Accept Request</button>
+
+                <div class="col-md-12 form-outline mb-4 text-center">
+                    <span class="successMsg"></span>
+                    <span class="errorMsg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="rejectReqModal" tabindex="-1" role="dialog" aria-labelledby="rejectReqModal"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Reject Request</h5>
+                <button type="button" class="btn btn-light close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <label class="fontStyling">Are you sure you want to reject this request? </label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-danger" id="confirmRejectReq" requesttype="3" requestid="">Reject Request</button>
+
+                <div class="col-md-12 form-outline mb-4 text-center">
+                    <span class="successMsg"></span>
+                    <span class="errorMsg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>
+<!-- Modal -->

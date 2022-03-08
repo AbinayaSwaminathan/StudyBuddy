@@ -1,2 +1,1 @@
-# StudyBuddy
- Capstone Project
+# StudyMate

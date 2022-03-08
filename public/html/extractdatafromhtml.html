@@ -1,0 +1,1064 @@
+<!-- CSS -->
+<!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css"> -->
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/ab3cb519ad.js" crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script>
+    var url = "http://127.0.0.1:3000/";
+    // url = "http://3.228.236.231:3000/";
+</script>
+<!-- <script src="assets/js/user.js" charset="utf-8"></script> -->
+
+<body>
+    <table class="timezone-table">
+        <thead>
+           <tr>
+              <th>Time Zone Abbreviation</th>
+              <th>Time Zone Name</th>
+              <th>Offset</th>
+           </tr>
+        </thead>
+        <tbody id= "timezonetable">
+           <tr>
+              <td><a href="https://www.utctime.net/gmt-time-now" title="GMT Time Now">GMT</a></td>
+              <td>Greenwich Mean Time</td>
+              <td>UTC</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/ibst-time-now" title="IBST Time Now">IBST</a></td>
+              <td>International Business Standard Time</td>
+              <td>UTC</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/wet-time-now" title="WET Time Now">WET</a></td>
+              <td>Western European Time</td>
+              <td>UTC</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/z-time-now" title="Z Time Now">Z</a></td>
+              <td>Zulu Time (Coordinated Universal Time)</td>
+              <td>UTC</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/egst-time-now" title="EGST Time Now">EGST</a></td>
+              <td>Eastern Greenland Summer Time</td>
+              <td>UTC+00</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/bst-time-now" title="BST Time Now">BST</a></td>
+              <td>British Summer Time</td>
+              <td>UTC+01</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cet-time-now" title="CET Time Now">CET</a></td>
+              <td>Central European Time</td>
+              <td>UTC+01</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/dft-time-now" title="DFT Time Now">DFT</a></td>
+              <td>AIX specific equivalent of Central European Time</td>
+              <td>UTC+01</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/ist-time-now" title="IST Time Now">IST</a></td>
+              <td>Irish Standard Time</td>
+              <td>UTC+01</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/met-time-now" title="MET Time Now">MET</a></td>
+              <td>Middle European Time Same zone as CET</td>
+              <td>UTC+01</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/wat-time-now" title="WAT Time Now">WAT</a></td>
+              <td>West Africa Time</td>
+              <td>UTC+01</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/wedt-time-now" title="WEDT Time Now">WEDT</a></td>
+              <td>Western European Daylight Time</td>
+              <td>UTC+01</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/west-time-now" title="WEST Time Now">WEST</a></td>
+              <td>Western European Summer Time</td>
+              <td>UTC+01</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cat-time-now" title="CAT Time Now">CAT</a></td>
+              <td>Central Africa Time</td>
+              <td>UTC+02</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cedt-time-now" title="CEDT Time Now">CEDT</a></td>
+              <td>Central European Daylight Time</td>
+              <td>UTC+02</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cest-time-now" title="CEST Time Now">CEST</a></td>
+              <td>Central European Summer Time</td>
+              <td>UTC+02</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/eet-time-now" title="EET Time Now">EET</a></td>
+              <td>Eastern European Time</td>
+              <td>UTC+02</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/haec-time-now" title="HAEC Time Now">HAEC</a></td>
+              <td>Heure Avancée d'Europe Centrale francised name for CEST</td>
+              <td>UTC+02</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/ist-israel-time-now" title="IST Israel Time Now">IST Israel</a></td>
+              <td>Israel Standard Time</td>
+              <td>UTC+02</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/mest-time-now" title="MEST Time Now">MEST</a></td>
+              <td>Middle European Summer Time Same zone as CEST</td>
+              <td>UTC+02</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/sast-time-now" title="SAST Time Now">SAST</a></td>
+              <td>South African Standard Time</td>
+              <td>UTC+02</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/usz1-time-now" title="USZ1 Time Now">USZ1</a></td>
+              <td>Kaliningrad Time</td>
+              <td>UTC+02</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/wast-time-now" title="WAST Time Now">WAST</a></td>
+              <td>West Africa Summer Time</td>
+              <td>UTC+02</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/ast-arabia-time-now" title="AST Arabia Time Now">AST Arabia</a></td>
+              <td>Arabia Standard Time</td>
+              <td>UTC+03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/eat-time-now" title="EAT Time Now">EAT</a></td>
+              <td>East Africa Time</td>
+              <td>UTC+03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/eedt-time-now" title="EEDT Time Now">EEDT</a></td>
+              <td>Eastern European Daylight Time</td>
+              <td>UTC+03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/eest-time-now" title="EEST Time Now">EEST</a></td>
+              <td>Eastern European Summer Time</td>
+              <td>UTC+03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/fet-time-now" title="FET Time Now">FET</a></td>
+              <td>Further-eastern European Time</td>
+              <td>UTC+03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/idt-time-now" title="IDT Time Now">IDT</a></td>
+              <td>Israel Daylight Time</td>
+              <td>UTC+03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/iot-time-now" title="IOT Time Now">IOT</a></td>
+              <td>Indian Ocean Time</td>
+              <td>UTC+03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/msk-time-now" title="MSK Time Now">MSK</a></td>
+              <td>Moscow Time</td>
+              <td>UTC+03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/syot-time-now" title="SYOT Time Now">SYOT</a></td>
+              <td>Showa Station Time</td>
+              <td>UTC+03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/irst-time-now" title="IRST Time Now">IRST</a></td>
+              <td>Iran Standard Time</td>
+              <td>UTC+03:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/amt-armenia-time-now" title="AMT Armenia Time Now">AMT Armenia</a></td>
+              <td>Armenia Time</td>
+              <td>UTC+04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/azt-time-now" title="AZT Time Now">AZT</a></td>
+              <td>Azerbaijan Time</td>
+              <td>UTC+04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/get-time-now" title="GET Time Now">GET</a></td>
+              <td>Georgia Standard Time</td>
+              <td>UTC+04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/gst-gulf-time-now" title="GST Gulf Time Now">GST Gulf</a></td>
+              <td>Gulf Standard Time</td>
+              <td>UTC+04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/mut-time-now" title="MUT Time Now">MUT</a></td>
+              <td>Mauritius Time</td>
+              <td>UTC+04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/ret-time-now" title="RET Time Now">RET</a></td>
+              <td>Réunion Time</td>
+              <td>UTC+04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/samt-time-now" title="SAMT Time Now">SAMT</a></td>
+              <td>Samara Time</td>
+              <td>UTC+04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/sct-time-now" title="SCT Time Now">SCT</a></td>
+              <td>Seychelles Time</td>
+              <td>UTC+04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/volt-time-now" title="VOLT Time Now">VOLT</a></td>
+              <td>Volgograd Time</td>
+              <td>UTC+04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/aft-time-now" title="AFT Time Now">AFT</a></td>
+              <td>Afghanistan Time</td>
+              <td>UTC+04:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/irdt-time-now" title="IRDT Time Now">IRDT</a></td>
+              <td>Iran Daylight Time</td>
+              <td>UTC+04:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/hmt-time-now" title="HMT Time Now">HMT</a></td>
+              <td>Heard and McDonald Islands Time</td>
+              <td>UTC+05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/mawt-time-now" title="MAWT Time Now">MAWT</a></td>
+              <td>Mawson Station Time</td>
+              <td>UTC+05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/mvt-time-now" title="MVT Time Now">MVT</a></td>
+              <td>Maldives Time</td>
+              <td>UTC+05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/orat-time-now" title="ORAT Time Now">ORAT</a></td>
+              <td>Oral Time</td>
+              <td>UTC+05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/pkt-time-now" title="PKT Time Now">PKT</a></td>
+              <td>Pakistan Standard Time</td>
+              <td>UTC+05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/tft-time-now" title="TFT Time Now">TFT</a></td>
+              <td>Indian/Kerguelen</td>
+              <td>UTC+05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/tjt-time-now" title="TJT Time Now">TJT</a></td>
+              <td>Tajikistan Time</td>
+              <td>UTC+05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/tmt-time-now" title="TMT Time Now">TMT</a></td>
+              <td>Turkmenistan Time</td>
+              <td>UTC+05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/uzt-time-now" title="UZT Time Now">UZT</a></td>
+              <td>Uzbekistan Time</td>
+              <td>UTC+05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/yekt-time-now" title="YEKT Time Now">YEKT</a></td>
+              <td>Yekaterinburg Time</td>
+              <td>UTC+05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/ist-indian-time-now" title="IST Indian Time Now">IST Indian</a></td>
+              <td>Indian Standard Time</td>
+              <td>UTC+05:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/slst-time-now" title="SLST Time Now">SLST</a></td>
+              <td>Sri Lanka Standard Time</td>
+              <td>UTC+05:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/npt-time-now" title="NPT Time Now">NPT</a></td>
+              <td>Nepal Time</td>
+              <td>UTC+05:45</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/bdt-bangladesh-time-now" title="BDT Bangladesh Time Now">BDT Bangladesh</a></td>
+              <td>Bangladesh Daylight Time</td>
+              <td>UTC+06</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/biot-time-now" title="BIOT Time Now">BIOT</a></td>
+              <td>British Indian Ocean Time</td>
+              <td>UTC+06</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/bst-bangladesh-time-now" title="BST Bangladesh Time Now">BST Bangladesh</a></td>
+              <td>Bangladesh Standard Time</td>
+              <td>UTC+06</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/btt-time-now" title="BTT Time Now">BTT</a></td>
+              <td>Bhutan Time</td>
+              <td>UTC+06</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/kgt-time-now" title="KGT Time Now">KGT</a></td>
+              <td>Kyrgyzstan time</td>
+              <td>UTC+06</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/omst-time-now" title="OMST Time Now">OMST</a></td>
+              <td>Omsk Time</td>
+              <td>UTC+06</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/vost-time-now" title="VOST Time Now">VOST</a></td>
+              <td>Vostok Station Time</td>
+              <td>UTC+06</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cct-time-now" title="CCT Time Now">CCT</a></td>
+              <td>Cocos Islands Time</td>
+              <td>UTC+06:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/mmt-time-now" title="MMT Time Now">MMT</a></td>
+              <td>Myanmar Time</td>
+              <td>UTC+06:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/mst-myanmar-time-now" title="MST Myanmar Time Now">MST Myanmar</a></td>
+              <td>Myanmar Standard Time</td>
+              <td>UTC+06:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cxt-time-now" title="CXT Time Now">CXT</a></td>
+              <td>Christmas Island Time</td>
+              <td>UTC+07</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/davt-time-now" title="DAVT Time Now">DAVT</a></td>
+              <td>Davis Time</td>
+              <td>UTC+07</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/hovt-time-now" title="HOVT Time Now">HOVT</a></td>
+              <td>Khovd Time</td>
+              <td>UTC+07</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/ict-time-now" title="ICT Time Now">ICT</a></td>
+              <td>Indochina Time</td>
+              <td>UTC+07</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/krat-time-now" title="KRAT Time Now">KRAT</a></td>
+              <td>Krasnoyarsk Time</td>
+              <td>UTC+07</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/tha-time-now" title="THA Time Now">THA</a></td>
+              <td>Thailand Standard Time</td>
+              <td>UTC+07</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/wit-time-now" title="WIT Time Now">WIT</a></td>
+              <td>Western Indonesian Time</td>
+              <td>UTC+07</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/act-time-now" title="ACT Time Now">ACT</a></td>
+              <td>ASEAN Common Time</td>
+              <td>UTC+08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/awst-time-now" title="AWST Time Now">AWST</a></td>
+              <td>Australian Western Standard Time</td>
+              <td>UTC+08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/bdt-time-now" title="BDT Time Now">BDT</a></td>
+              <td>Brunei Time</td>
+              <td>UTC+08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/chot-time-now" title="CHOT Time Now">CHOT</a></td>
+              <td>Choibalsan</td>
+              <td>UTC+08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cit-time-now" title="CIT Time Now">CIT</a></td>
+              <td>Central Indonesia Time</td>
+              <td>UTC+08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cst-china-time-now" title="CST China Time Now">CST China</a></td>
+              <td>China Standard Time</td>
+              <td>UTC+08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/ct-time-now" title="CT Time Now">CT</a></td>
+              <td>China time</td>
+              <td>UTC+08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/hkt-time-now" title="HKT Time Now">HKT</a></td>
+              <td>Hong Kong Time</td>
+              <td>UTC+08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/irkt-time-now" title="IRKT Time Now">IRKT</a></td>
+              <td>Irkutsk Time</td>
+              <td>UTC+08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/mst-malaysia-time-now" title="MST Malaysia Time Now">MST Malaysia</a></td>
+              <td>Malaysia Standard Time</td>
+              <td>UTC+08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/myt-time-now" title="MYT Time Now">MYT</a></td>
+              <td>Malaysia Time</td>
+              <td>UTC+08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/pst-philippine-time-now" title="PST Philippine Time Now">PST Philippine</a></td>
+              <td>Philippine Standard Time</td>
+              <td>UTC+08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/sgt-time-now" title="SGT Time Now">SGT</a></td>
+              <td>Singapore Time</td>
+              <td>UTC+08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/sst-time-now" title="SST Time Now">SST</a></td>
+              <td>Singapore Standard Time</td>
+              <td>UTC+08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/ulat-time-now" title="ULAT Time Now">ULAT</a></td>
+              <td>Ulaanbaatar Time</td>
+              <td>UTC+08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/wst-time-now" title="WST Time Now">WST</a></td>
+              <td>Western Standard Time</td>
+              <td>UTC+08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cwst-time-now" title="CWST Time Now">CWST</a></td>
+              <td>Central Western Standard Time (Australia)</td>
+              <td>UTC+08:45</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/awdt-time-now" title="AWDT Time Now">AWDT</a></td>
+              <td>Australian Western Daylight Time</td>
+              <td>UTC+09</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/eit-time-now" title="EIT Time Now">EIT</a></td>
+              <td>Eastern Indonesian Time</td>
+              <td>UTC+09</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/jst-time-now" title="JST Time Now">JST</a></td>
+              <td>Japan Standard Time</td>
+              <td>UTC+09</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/kst-time-now" title="KST Time Now">KST</a></td>
+              <td>Korea Standard Time</td>
+              <td>UTC+09</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/tlt-time-now" title="TLT Time Now">TLT</a></td>
+              <td>Timor Leste Time</td>
+              <td>UTC+09</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/yakt-time-now" title="YAKT Time Now">YAKT</a></td>
+              <td>Yakutsk Time</td>
+              <td>UTC+09</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/acst-time-now" title="ACST Time Now">ACST</a></td>
+              <td>Australian Central Standard Time</td>
+              <td>UTC+09:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cst-australia-central-time-now" title="CST Australia Central Time Now">CST Australia Central</a></td>
+              <td>Central Standard Time (Australia)</td>
+              <td>UTC+09:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/aest-time-now" title="AEST Time Now">AEST</a></td>
+              <td>Australian Eastern Standard Time</td>
+              <td>UTC+10</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/chst-time-now" title="ChST Time Now">ChST</a></td>
+              <td>Chamorro Standard Time</td>
+              <td>UTC+10</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/chut-time-now" title="CHUT Time Now">CHUT</a></td>
+              <td>Chuuk Time</td>
+              <td>UTC+10</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/ddut-time-now" title="DDUT Time Now">DDUT</a></td>
+              <td>Dumont d'Urville Time</td>
+              <td>UTC+10</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/est-australia-time-now" title="EST Australia Time Now">EST Australia</a></td>
+              <td>Eastern Standard Time (Australia)</td>
+              <td>UTC+10</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/pgt-time-now" title="PGT Time Now">PGT</a></td>
+              <td>Papua New Guinea Time</td>
+              <td>UTC+10</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/vlat-time-now" title="VLAT Time Now">VLAT</a></td>
+              <td>Vladivostok Time</td>
+              <td>UTC+10</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/acdt-time-now" title="ACDT Time Now">ACDT</a></td>
+              <td>Australian Central Daylight Savings Time</td>
+              <td>UTC+10:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cst-australia-summer-time-now" title="CST Australia Central Summer Time Now">CST Australia Central Summer</a></td>
+              <td>Central Summer Time (Australia)</td>
+              <td>UTC+10:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/lhst-time-now" title="LHST Time Now">LHST</a></td>
+              <td>Lord Howe Standard Time</td>
+              <td>UTC+10:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/aedt-time-now" title="AEDT Time Now">AEDT</a></td>
+              <td>Australian Eastern Daylight Savings Time</td>
+              <td>UTC+11</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/bst-bougainville-time-now" title="BST Bougainville Time Now">BST Bougainville</a></td>
+              <td>Bougainville Standard Time</td>
+              <td>UTC+11</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/kost-time-now" title="KOST Time Now">KOST</a></td>
+              <td>Kosrae Time</td>
+              <td>UTC+11</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/lhst-summer-time-now" title="LHST Lord Howe Summer Time Now">LHST Lord Howe Summer</a></td>
+              <td>Lord Howe Summer Time</td>
+              <td>UTC+11</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/mist-time-now" title="MIST Time Now">MIST</a></td>
+              <td>Macquarie Island Station Time</td>
+              <td>UTC+11</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/nct-time-now" title="NCT Time Now">NCT</a></td>
+              <td>New Caledonia Time</td>
+              <td>UTC+11</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/pont-time-now" title="PONT Time Now">PONT</a></td>
+              <td>Pohnpei Standard Time</td>
+              <td>UTC+11</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/sakt-time-now" title="SAKT Time Now">SAKT</a></td>
+              <td>Sakhalin Island time</td>
+              <td>UTC+11</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/sbt-time-now" title="SBT Time Now">SBT</a></td>
+              <td>Solomon Islands Time</td>
+              <td>UTC+11</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/sret-time-now" title="SRET Time Now">SRET</a></td>
+              <td>Srednekolymsk Time</td>
+              <td>UTC+11</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/vut-time-now" title="VUT Time Now">VUT</a></td>
+              <td>Vanuatu Time</td>
+              <td>UTC+11</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/nft-time-now" title="NFT Time Now">NFT</a></td>
+              <td>Norfolk Time</td>
+              <td>UTC+11:00</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/fjt-time-now" title="FJT Time Now">FJT</a></td>
+              <td>Fiji Time</td>
+              <td>UTC+12</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/gilt-time-now" title="GILT Time Now">GILT</a></td>
+              <td>Gilbert Island Time</td>
+              <td>UTC+12</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/magt-time-now" title="MAGT Time Now">MAGT</a></td>
+              <td>Magadan Time</td>
+              <td>UTC+12</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/mht-time-now" title="MHT Time Now">MHT</a></td>
+              <td>Marshall Islands</td>
+              <td>UTC+12</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/nzst-time-now" title="NZST Time Now">NZST</a></td>
+              <td>New Zealand Standard Time</td>
+              <td>UTC+12</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/pett-time-now" title="PETT Time Now">PETT</a></td>
+              <td>Kamchatka Time</td>
+              <td>UTC+12</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/tvt-time-now" title="TVT Time Now">TVT</a></td>
+              <td>Tuvalu Time</td>
+              <td>UTC+12</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/wakt-time-now" title="WAKT Time Now">WAKT</a></td>
+              <td>Wake Island Time</td>
+              <td>UTC+12</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/chast-time-now" title="CHAST Time Now">CHAST</a></td>
+              <td>Chatham Standard Time</td>
+              <td>UTC+12:45</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/nzdt-time-now" title="NZDT Time Now">NZDT</a></td>
+              <td>New Zealand Daylight Time</td>
+              <td>UTC+13</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/phot-time-now" title="PHOT Time Now">PHOT</a></td>
+              <td>Phoenix Island Time</td>
+              <td>UTC+13</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/tkt-time-now" title="TKT Time Now">TKT</a></td>
+              <td>Tokelau Time</td>
+              <td>UTC+13</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/tot-time-now" title="TOT Time Now">TOT</a></td>
+              <td>Tonga Time</td>
+              <td>UTC+13</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/chadt-time-now" title="CHADT Time Now">CHADT</a></td>
+              <td>Chatham Daylight Time</td>
+              <td>UTC+13:45</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/lint-time-now" title="LINT Time Now">LINT</a></td>
+              <td>Line Islands Time</td>
+              <td>UTC+14</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/azost-time-now" title="AZOST Time Now">AZOST</a></td>
+              <td>Azores Standard Time</td>
+              <td>UTC-01</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cvt-time-now" title="CVT Time Now">CVT</a></td>
+              <td>Cape Verde Time</td>
+              <td>UTC-01</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/egt-time-now" title="EGT Time Now">EGT</a></td>
+              <td>Eastern Greenland Time</td>
+              <td>UTC-01</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/brst-time-now" title="BRST Time Now">BRST</a></td>
+              <td>Brasilia Summer Time</td>
+              <td>UTC-02</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/fnt-time-now" title="FNT Time Now">FNT</a></td>
+              <td>Fernando de Noronha Time</td>
+              <td>UTC-02</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/gst-time-now" title="GST Time Now">GST</a></td>
+              <td>South Georgia and the South Sandwich Islands</td>
+              <td>UTC-02</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/pmdt-time-now" title="PMDT Time Now">PMDT</a></td>
+              <td>Saint Pierre and Miquelon Daylight time</td>
+              <td>UTC-02</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/uyst-time-now" title="UYST Time Now">UYST</a></td>
+              <td>Uruguay Summer Time</td>
+              <td>UTC-02</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/ndt-time-now" title="NDT Time Now">NDT</a></td>
+              <td>Newfoundland Daylight Time</td>
+              <td>UTC-02:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/adt-time-now" title="ADT Time Now">ADT</a></td>
+              <td>Atlantic Daylight Time</td>
+              <td>UTC-03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/amst-time-now" title="AMST Time Now">AMST</a></td>
+              <td>Amazon Summer Time (Brazil)</td>
+              <td>UTC-03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/art-time-now" title="ART Time Now">ART</a></td>
+              <td>Argentina Time</td>
+              <td>UTC-03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/brt-time-now" title="BRT Time Now">BRT</a></td>
+              <td>Brasilia Time</td>
+              <td>UTC-03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/clst-time-now" title="CLST Time Now">CLST</a></td>
+              <td>Chile Summer Time</td>
+              <td>UTC-03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/fkst-time-now" title="FKST Time Now">FKST</a></td>
+              <td>Falkland Islands Standard Time</td>
+              <td>UTC-03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/fkst-summer-time-now" title="FKST Falkland Islands Summer Time Now">FKST Falkland Islands Summer</a></td>
+              <td>Falkland Islands Summer Time</td>
+              <td>UTC-03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/gft-time-now" title="GFT Time Now">GFT</a></td>
+              <td>French Guiana Time</td>
+              <td>UTC-03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/pmst-time-now" title="PMST Time Now">PMST</a></td>
+              <td>Saint Pierre and Miquelon Standard Time</td>
+              <td>UTC-03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/pyst-time-now" title="PYST Time Now">PYST</a></td>
+              <td>Paraguay Summer Time (South America)</td>
+              <td>UTC-03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/rott-time-now" title="ROTT Time Now">ROTT</a></td>
+              <td>Rothera Research Station Time</td>
+              <td>UTC-03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/srt-time-now" title="SRT Time Now">SRT</a></td>
+              <td>Suriname Time</td>
+              <td>UTC-03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/uyt-time-now" title="UYT Time Now">UYT</a></td>
+              <td>Uruguay Standard Time</td>
+              <td>UTC-03</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/nst-time-now" title="NST Time Now">NST</a></td>
+              <td>Newfoundland Standard Time</td>
+              <td>UTC-03:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/nt-time-now" title="NT Time Now">NT</a></td>
+              <td>Newfoundland Time</td>
+              <td>UTC-03:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/amt-time-now" title="AMT Time Now">AMT</a></td>
+              <td>Amazon Time (Brazil)</td>
+              <td>UTC-04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/ast-time-now" title="AST Time Now">AST</a></td>
+              <td>Atlantic Standard Time</td>
+              <td>UTC-04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/bot-time-now" title="BOT Time Now">BOT</a></td>
+              <td>Bolivia Time</td>
+              <td>UTC-04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cdt-cuba-time-now" title="CDT Cuba Time Now">CDT Cuba</a></td>
+              <td>Cuba Daylight Time</td>
+              <td>UTC-04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/clt-time-now" title="CLT Time Now">CLT</a></td>
+              <td>Chile Standard Time</td>
+              <td>UTC-04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cost-time-now" title="COST Time Now">COST</a></td>
+              <td>Colombia Summer Time</td>
+              <td>UTC-04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/ect-time-now" title="ECT Time Now">ECT</a></td>
+              <td>Eastern Caribbean Time</td>
+              <td>UTC-04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/edt-time-now" title="EDT Time Now">EDT</a></td>
+              <td>Eastern Daylight Time (North America)</td>
+              <td>UTC-04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/fkt-time-now" title="FKT Time Now">FKT</a></td>
+              <td>Falkland Islands Time</td>
+              <td>UTC-04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/gyt-time-now" title="GYT Time Now">GYT</a></td>
+              <td>Guyana Time</td>
+              <td>UTC-04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/pyt-time-now" title="PYT Time Now">PYT</a></td>
+              <td>Paraguay Time (South America)</td>
+              <td>UTC-04</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/vet-time-now" title="VET Time Now">VET</a></td>
+              <td>Venezuelan Standard Time</td>
+              <td>UTC-04:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/act-acre-time-now" title="ACT Acre Time Now">ACT Acre</a></td>
+              <td>Acre Time</td>
+              <td>UTC-05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cdt-time-now" title="CDT Time Now">CDT</a></td>
+              <td>Central Daylight Time (North America)</td>
+              <td>UTC-05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cot-time-now" title="COT Time Now">COT</a></td>
+              <td>Colombia Time</td>
+              <td>UTC-05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cst-cuba-time-now" title="CST Cuba Time Now">CST Cuba</a></td>
+              <td>Cuba Standard Time</td>
+              <td>UTC-05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/easst-time-now" title="EASST Time Now">EASST</a></td>
+              <td>Easter Island Standard Summer Time</td>
+              <td>UTC-05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/ect-ecuador-time-now" title="ECT Ecuador Time Now">ECT Ecuador</a></td>
+              <td>Ecuador Time</td>
+              <td>UTC-05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/est-time-now" title="EST Time Now">EST</a></td>
+              <td>Eastern Standard Time (North America)</td>
+              <td>UTC-05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/pet-time-now" title="PET Time Now">PET</a></td>
+              <td>Peru Time</td>
+              <td>UTC-05</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cst-time-now" title="CST Time Now">CST</a></td>
+              <td>Central Standard Time (North America)</td>
+              <td>UTC-06</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/east-time-now" title="EAST Time Now">EAST</a></td>
+              <td>Easter Island Standard Time</td>
+              <td>UTC-06</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/galt-time-now" title="GALT Time Now">GALT</a></td>
+              <td>Galapagos Time</td>
+              <td>UTC-06</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/mdt-time-now" title="MDT Time Now">MDT</a></td>
+              <td>Mountain Daylight Time (North America)</td>
+              <td>UTC-06</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/mst-time-now" title="MST Time Now">MST</a></td>
+              <td>Mountain Standard Time (North America)</td>
+              <td>UTC-07</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/pdt-time-now" title="PDT Time Now">PDT</a></td>
+              <td>Pacific Daylight Time (North America)</td>
+              <td>UTC-07</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/akdt-time-now" title="AKDT Time Now">AKDT</a></td>
+              <td>Alaska Daylight Time</td>
+              <td>UTC-08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/cist-time-now" title="CIST Time Now">CIST</a></td>
+              <td>Clipperton Island Standard Time</td>
+              <td>UTC-08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/pst-time-now" title="PST Time Now">PST</a></td>
+              <td>Pacific Standard Time (North America)</td>
+              <td>UTC-08</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/akst-time-now" title="AKST Time Now">AKST</a></td>
+              <td>Alaska Standard Time</td>
+              <td>UTC-09</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/gamt-time-now" title="GAMT Time Now">GAMT</a></td>
+              <td>Gambier Islands</td>
+              <td>UTC-09</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/git-time-now" title="GIT Time Now">GIT</a></td>
+              <td>Gambier Island Time</td>
+              <td>UTC-09</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/hadt-time-now" title="HADT Time Now">HADT</a></td>
+              <td>Hawaii-Aleutian Daylight Time</td>
+              <td>UTC-09</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/mart-time-now" title="MART Time Now">MART</a></td>
+              <td>Marquesas Islands Time</td>
+              <td>UTC-09:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/mit-time-now" title="MIT Time Now">MIT</a></td>
+              <td>Marquesas Islands Time</td>
+              <td>UTC-09:30</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/ckt-time-now" title="CKT Time Now">CKT</a></td>
+              <td>Cook Island Time</td>
+              <td>UTC-10</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/hast-time-now" title="HAST Time Now">HAST</a></td>
+              <td>Hawaii-Aleutian Standard Time</td>
+              <td>UTC-10</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/hst-time-now" title="HST Time Now">HST</a></td>
+              <td>Hawaii Standard Time</td>
+              <td>UTC-10</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/taht-time-now" title="TAHT Time Now">TAHT</a></td>
+              <td>Tahiti Time</td>
+              <td>UTC-10</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/nut-time-now" title="NUT Time Now">NUT</a></td>
+              <td>Niue Time</td>
+              <td>UTC-11</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/sst-samoa-time-now" title="SST Samoa Time Now">SST Samoa</a></td>
+              <td>Samoa Standard Time</td>
+              <td>UTC-11</td>
+           </tr>
+           <tr>
+              <td><a href="https://www.utctime.net/bit-time-now" title="BIT Time Now">BIT</a></td>
+              <td>Baker Island Time</td>
+              <td>UTC-12</td>
+           </tr>
+        </tbody>
+     </table>
+</body>
+<script>
+    let data = {}, cnt = 0;
+    $("#timezonetable tr").each(function () {
+        let $row = $(this);
+        let $columns = $row.find('td');
+        let indidata = {};
+        $.each($columns, function (i, item) {
+            if (i == 0) {
+                indidata['abbr'] = item.innerText.trim().replace(/'/g,' ');
+            } else if (i == 1) {
+                indidata['timezone'] = item.innerText.trim().replace(/'/g,' ');
+            } else if (i == 2) {
+                indidata['offset'] = item.innerText.trim().replace(/'/g,' ');
+                data[cnt] = indidata;
+                cnt++;
+                indidata = {};
+            }
+        });
+    });
+    console.log(data);
+</script>

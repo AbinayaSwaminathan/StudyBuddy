@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StudyMate | Find A Study Partner</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%- include('usercommonCSSJS') -%>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <%- include('userheader') -%>
+            <section class="mt-55" id="studentprofile">
+                <!-- <div class="container-fluid"> -->
+                <hr class="featurette-divider">
+                <div class="row featurette">
+                    <%- include('profilesidepanel') -%>
+                        <div class="col-md-9" id="mainpanel">
+                            <div class="card shadow-2-strong accsettings" style="border-radius: 1rem;">
+                                <div class="card-body p-5">
+                                    <h2 class="featurette-heading text-center">Hello <span class="text-muted">
+                                            <%= name %>
+                                        </span>,</h2>
+                                    <div class="form-outline mb-4">
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <div class="row">
+                                            <div class="col-sm-12 mb-4">
+                                                <label>New Password:</label>
+                                            </div>
+                                            <div class="col-sm-12 mb-4">
+                                                <input type="password" id="password1"
+                                                    class="form-control form-control-sm"
+                                                    placeholder="(Required) Enter Password..." minlength="6"
+                                                    maxlength="12" />
+                                            </div>
+                                            <div class="col-sm-12 mb-4">
+                                                <input type="password" id="password2"
+                                                    class="form-control form-control-sm"
+                                                    placeholder="(Required) Retype Password..." minlength="6"
+                                                    maxlength="12" />
+                                            </div>
+                                            <div class="col-sm-12 mb-4">
+                                                <button class="btn btn-danger btn-sm btn-block" type="submit"
+                                                    id="updatepassword">Update Password</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <div class="row">
+                                            <div class="col-sm-12 mb-4">
+                                                <label>Account Settings:</label>
+                                            </div>
+                                            <div class="col-sm-12 mb-4">
+                                                <button type="button" class="btn btn-sm btn-warning btn-block" data-toggle="modal"
+                                                    data-target="#deactivateAccModal">
+                                                    Deactivate Account
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4 text-center">
+                                        <span class="successMsg"></span>
+                                        <span class="errorMsg"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </section>
+    </div>
+    <%- include('userfooter') -%>
+</body>
+<!-- Modal -->
+<div class="modal fade" id="deactivateAccModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Deactivate Account</h5>
+                <button type="button" class="btn btn-light close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <label class="fontStyling">Are you sure you want to deactivate your account? </label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-danger" id="deactivateAcc">Deactivate Account</button>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

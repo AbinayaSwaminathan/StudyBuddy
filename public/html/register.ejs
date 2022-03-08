@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StudyMate | Find A Study Partner</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%- include('commonCSSJS') -%>
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <%- include('header') -%>
+            <section class="vh-100" id="createaccount">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                            <div class="card-body p-5 text-center">
+
+                                <h3 class="mb-5">Create Account</h3>
+
+                                <div class="form-outline mb-4">
+                                    <input type="email" id="useremail" class="form-control form-control-sm"
+                                        placeholder="(Required) Enter Email Id..." maxlength="100" />
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="name" class="form-control form-control-sm"
+                                        placeholder="(Required) Enter Name..." maxlength="50" />
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="number" id="contact" class="form-control form-control-sm"
+                                        placeholder="(Required) Enter Contact No: xxxxxxxxxx" />
+                                </div>
+                                <div class="form-outline mb-4 genderblock">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Gender: </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="genderoption"
+                                            id="inlineRadio1" value="Male">
+                                        <label class="form-check-label" for="inlineRadio1">Male</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="genderoption"
+                                            id="inlineRadio2" value="Female">
+                                        <label class="form-check-label" for="inlineRadio2">Female</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="genderoption"
+                                            id="inlineRadio3" value="Other" checked>
+                                        <label class="form-check-label" for="inlineRadio3">Other</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="address" class="form-control form-control-sm"
+                                        placeholder="(Required) Enter Address..." />
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="number" id="zipcode" class="form-control form-control-sm"
+                                        placeholder="(Required) Enter Zipcode..." />
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="userPassword" class="form-control form-control-sm"
+                                        placeholder="(Required) Enter Password..." minlength="6" maxlength="12"/>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <span class="successMsg"></span>
+                                    <span class="errorMsg"></span>
+                                </div>
+                                
+                                <button class="btn btn-primary btn-sm btn-block" type="submit" id="createAccount">Create Account</button>
+                                <hr class="my-4">
+                                <div class="g-signin2 mb-4" data-onsuccess="onSignIn"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </div>
+    <%- include('footer') -%>
+</body>
+
+</html>

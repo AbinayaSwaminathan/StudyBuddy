@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StudyMate | Find A Study Partner</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/mdb.css">
+    <%- include('usercommonCSSJS') -%>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <%- include('userheader') -%>
+            <section class="mt-55" id="studentprofile">
+                <!-- <div class="container-fluid"> -->
+                <hr class="featurette-divider">
+                <div class="row featurette">
+                    <%- include('profilesidepanel') -%>
+                        <div class="col-md-9" id="mainpanel">
+                            <div class="card shadow-2-strong editacademicinfo" style="border-radius: 1rem;">
+                                <div class="card-body p-5 text-center">
+
+                                    <h2 class="featurette-heading">Hello <span class="text-muted">
+                                            <%= name %>
+                                        </span>,</h2>
+
+                                    <div class="col-md-8 form-outline mb-4 text-start">
+                                        <label class="form-check-label">Exam: </label>
+                                        <select id="exams" class="mdb-select dropdown-primary md-form" multiple>
+                                            <option value="" disabled>Exam List</option>
+                                            <% if(Object.keys(exam).length> 0) {
+                                                Object.entries(exam).forEach(([key, value]) => {
+                                                %>
+                                                <option value="<%=value.abbr%>" <% if(exam_taking.indexOf(value.abbr) >= 0) {
+                                                    %> selected <% } %>><%=value.abbr%></option>
+                                                <% }); } %>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-8 form-outline mb-4 text-center">
+                                        <label class="form-check-label">OR</label>
+                                    </div>
+
+                                    <div class="col-md-8 form-outline mb-4 text-start">
+                                        <label class="form-check-label">University: </label>
+                                        <select id="university" class="mdb-select dropdown-primary md-form">
+                                            <option value="" disabled selected>University List</option>
+                                            <% if(Object.keys(universities).length> 0) {
+                                                Object.entries(universities).forEach(([key, value]) => {
+                                                %>
+                                                <option value="<%=value.university%>" <% if(university==value.university ) {
+                                                    %> selected <% } %>><%=value.university%> </option>
+                                                <% }); } %>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-8 form-outline mb-4 text-start">
+                                        <label class="form-check-label">Degree: </label>
+                                        <select id="degree" class="mdb-select dropdown-primary md-form">
+                                            <option value="" disabled selected>Degree List <%= degree %></option>
+                                            <option value="diploma" <% if(degree=="diploma" ) { %> selected <% } %>
+                                                    >Diploma</option>
+                                            <option value="undergrad_associate" <% if(degree=="undergrad_associate" ) {
+                                                %> selected <% } %>>Undergrad (Associate)</option>
+                                            <option value="undergrad_bachelors" <% if(degree=="undergrad_bachelors" ) {
+                                                %> selected <% } %>>Undergrad (Bachelor)</option>
+                                            <option value="grad_master" <% if(degree=="grad_master" ) { %> selected <% }
+                                                    %>>Grad (Master)</option>
+                                            <option value="grad_doctoral" <% if(degree=="grad_doctoral" ) { %> selected
+                                                <% } %>>Grad (Doctoral)</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-8 form-outline mb-4 text-start">
+                                        <label class="form-check-label">Program: </label>
+                                        <select id="programs" class="mdb-select dropdown-primary md-form">
+                                            <option value="" disabled selected>Program List</option>
+                                            <% if(Object.keys(programs).length> 0) {
+                                                Object.entries(programs).forEach(([key, value]) => {
+                                                %>
+                                                <option value="<%=value.program%>" <% if(program==value.program ) {
+                                                    %> selected <% } %>><%=value.program%></option>
+                                                <% }); } %>
+                                        </select>
+                                    </div>
+
+                                    <div class="row col-md-8 form-outline mb-4 text-start">
+                                        <div class="col-md-4 form-outline mb-4 text-start">
+                                            <label class="form-check-label">Graduating Year: </label>
+                                            <select id="gyear" class="mdb-select dropdown-primary md-form">
+                                                <option value="" disabled selected>Select</option>
+                                                <% if(Object.keys(gyear).length> 0) {
+                                                    Object.entries(gyear).forEach(([key, value]) => {
+                                                    %>
+                                                    <option value="<%=value%>" <% if(graduating_year==value ) {
+                                                        %> selected <% } %>><%=value%></option>
+                                                    <% }); } %>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 form-outline mb-4 text-start alignwithotherelements" >
+                                            <label class="form-check-label">GPA (Optional): </label>
+                                            <input id="gpa" type="text" id="gpa" class="form-control form-control-sm"
+                                                placeholder="0.0" maxlength="3" value="<%= gpa %>" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <span class="successMsg"></span>
+                                        <span class="errorMsg"></span>
+                                    </div>
+
+                                    <button class="btn btn-danger btn-sm btn-block" type="submit"
+                                        id="saveacademicinfo">Save
+                                        Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </section>
+    </div>
+    <%- include('userfooter') -%>
+</body>
+
+<script>
+    $(document).ready(function () {
+        $('.mdb-select').formSelect();
+    });
+</script>
+
+</html>

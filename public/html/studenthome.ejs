@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StudyMate | Find A Study Partner</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%- include('usercommonCSSJS') -%>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <%- include('userheader') -%>
+            <section class="mt-55" id="studentprofile">
+                <!-- <div class="container-fluid"> -->
+                <hr class="featurette-divider">
+                <div class="row featurette">
+                    <%- include('profilesidepanel') -%>
+                        <div class="col-md-9" id="mainpanel">
+                            <div class="row requests">
+                                <h2 class="featurette-heading"><span class="text-muted">Study Mates</span></h2>
+                                <div class="row" id="allStudyMates">
+                                    <% if(Object.keys(allStudyMates).length> 0) {
+                                        Object.entries(allStudyMates).forEach(([key, value]) => {
+                                        %>
+                                        <div class="col-md-3 profiletile" user-id="<%= value.ru_id %>">
+                                            <div class=" profileimage">
+                                                <a target="_blank" href="view-student-profile/<%= value.ru_id %>">
+                                                    <img src="../assets/images/userProfile/<%= value.ru_id %>.jpg"
+                                                    class="img-thumbnail" alt="profile pictures">
+                                                </a>
+                                            </div>
+                                            <div class=" profiletitle">
+                                                <a target="_blank" href="view-student-profile/<%= value.ru_id %>">
+                                                    <%= value.name.toUpperCase() %>
+                                                </a>
+                                            </div>
+                                            <div class=" requeststatus">
+                                                <button class="btn btn-success btn-sm btn-block sendMessage" data-toggle="modal"
+                                                data-target="#sendMessage" 
+                                                user="<%=value.ru_id%>">SEND MESSAGE</button>&nbsp;
+                                                <button class="btn btn-danger btn-sm btn-block removeMate" data-toggle="modal"
+                                                data-target="#removeMate" user="<%=value.ru_id%>" ">REMOVE</button>
+                                            </div>
+                                        </div>
+                                        <% }); } else { %>
+                                            <div class="col-md-12 text-center mb-5">
+                                                <span class="errorMsgResult">No study mates</span>
+                                            </div>
+                                            <% } %>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </section>
+    </div>
+    <%- include('userfooter') -%>
+</body>
+
+<div class="modal fade" id="sendMessage" tabindex="-1" role="dialog" aria-labelledby="sendMessage"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Send Message</h5>
+                <button type="button" class="btn btn-light close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <textarea id="firstMessage" class="form-control form-control-sm"
+                                        placeholder="(Required) Enter Your Message..."></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-danger" id="confirmSendMessage" user="">Send Message</button>
+
+                <div class="col-md-12 form-outline mb-4 text-center">
+                    <span class="successMsg"></span>
+                    <span class="errorMsg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="removeMate" tabindex="-1" role="dialog" aria-labelledby="removeMate"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Remove Mate</h5>
+                <button type="button" class="btn btn-light close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <label class="fontStyling">Are you sure you want to remove this person from your list? </label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-danger" id="confirmRemoveMate" requestid="">Remove</button>
+
+                <div class="col-md-12 form-outline mb-4 text-center">
+                    <span class="successMsg"></span>
+                    <span class="errorMsg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

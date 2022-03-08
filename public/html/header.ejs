@@ -1,0 +1,35 @@
+<section id="navigationMenu">
+  <!-- Nav Bar -->
+  <!-- <div class="container-fluid"> -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <a class="nav-link" href="/"><img src="assets/images/logo.png" class="img-fluid" alt="Logo"></a>
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+          <a class="nav-link" id="home" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="log-in" href="/log-in">Log In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="create-account" href="/create-account">Create Account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="about-us" href="/about-us">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-us" href="/contact-us">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- </div> -->
+</section>
+<script>
+  var classname = "<%= activeClass %>";
+  $("#" + classname).addClass(" active");
+</script>
